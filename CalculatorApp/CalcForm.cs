@@ -29,7 +29,7 @@ namespace CalculatorApp
             inputCounter++;
             display.Text = "";
             inputData += "1";
-            display.Text += inputData;
+            display.Text += inputData; 
         }
 
         private void twoButton_Click(object sender, EventArgs e)
@@ -116,6 +116,7 @@ namespace CalculatorApp
 
             firstNumber = inputData;
             inputData = "";
+            functionDisplay.Text = "/";
         }
 
         private void multiplyButton_Click(object sender, EventArgs e)
@@ -124,6 +125,7 @@ namespace CalculatorApp
 
             firstNumber = inputData;
             inputData = "";
+            functionDisplay.Text = "*";
         }
 
         private void minusButton_Click(object sender, EventArgs e)
@@ -132,6 +134,7 @@ namespace CalculatorApp
 
             firstNumber = inputData;
             inputData = "";
+            functionDisplay.Text = "-";
         }
 
         private void plusButton_Click(object sender, EventArgs e)
@@ -140,6 +143,7 @@ namespace CalculatorApp
 
             firstNumber = inputData;
             inputData = "";
+            functionDisplay.Text = "+";
         }
 
         private void equalButton_Click(object sender, EventArgs e)
@@ -182,6 +186,8 @@ namespace CalculatorApp
                     display.Text = result.ToString();
                 }
             }
+
+            functionDisplay.Text = "";
         }
 
         private void clearButton_Click(object sender, EventArgs e)
