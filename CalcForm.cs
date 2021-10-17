@@ -17,6 +17,7 @@ namespace CalculatorApp
         string secondNumber = "";
         char function;
         double result = 0.0;
+        int inputCounter = 0;
 
         public CalcForm()
         {
@@ -25,6 +26,7 @@ namespace CalculatorApp
 
         private void oneButton_Click(object sender, EventArgs e)
         {
+            inputCounter++;
             display.Text = "";
             inputData += "1";
             display.Text += inputData;
@@ -32,6 +34,7 @@ namespace CalculatorApp
 
         private void twoButton_Click(object sender, EventArgs e)
         {
+            inputCounter++;
             display.Text = "";
             inputData += "2";
             display.Text += inputData;
@@ -39,6 +42,7 @@ namespace CalculatorApp
 
         private void threeButton_Click(object sender, EventArgs e)
         {
+            inputCounter++;
             display.Text = "";
             inputData += "3";
             display.Text += inputData;
@@ -46,6 +50,7 @@ namespace CalculatorApp
 
         private void fourButton_Click(object sender, EventArgs e)
         {
+            inputCounter++;
             display.Text = "";
             inputData += "4";
             display.Text += inputData;
@@ -53,6 +58,7 @@ namespace CalculatorApp
 
         private void fiveButton_Click(object sender, EventArgs e)
         {
+            inputCounter++;
             display.Text = "";
             inputData += "5";
             display.Text += inputData;
@@ -60,6 +66,7 @@ namespace CalculatorApp
 
         private void sixButton_Click(object sender, EventArgs e)
         {
+            inputCounter++;
             display.Text = "";
             inputData += "6";
             display.Text += inputData;
@@ -67,6 +74,7 @@ namespace CalculatorApp
 
         private void sevenButton_Click(object sender, EventArgs e)
         {
+            inputCounter++;
             display.Text = "";
             inputData += "7";
             display.Text += inputData;
@@ -74,6 +82,7 @@ namespace CalculatorApp
 
         private void eigftButton_Click(object sender, EventArgs e)
         {
+            inputCounter++;
             display.Text = "";
             inputData += "8";
             display.Text += inputData;
@@ -81,6 +90,7 @@ namespace CalculatorApp
 
         private void nineButton_Click(object sender, EventArgs e)
         {
+            inputCounter++;
             display.Text = "";
             inputData += "9";
             display.Text += inputData;
@@ -88,6 +98,7 @@ namespace CalculatorApp
 
         private void zeroButton_Click(object sender, EventArgs e)
         {
+            inputCounter++;
             display.Text = "";
             inputData += "0";
             display.Text += inputData;
@@ -96,6 +107,7 @@ namespace CalculatorApp
         private void decimalButton_Click(object sender, EventArgs e)
         {
             display.Text += ".";
+            inputData += '.';
         }
 
         private void devisionButton_Click(object sender, EventArgs e)
@@ -132,6 +144,12 @@ namespace CalculatorApp
 
         private void equalButton_Click(object sender, EventArgs e)
         {
+
+            if (inputCounter > 0 && result != 0.0)
+            {
+                firstNumber = result.ToString();
+            }
+
             secondNumber = inputData;
 
             double firstInput = Convert.ToDouble(firstNumber);
@@ -140,21 +158,30 @@ namespace CalculatorApp
             if(function == '+')
             {
                 result = firstInput + secondInput;
+                display.Text = result.ToString();
             }
             else if (function == '-')
             {
                 result = firstInput - secondInput;
+                display.Text = result.ToString();
             }
             else if (function == '*')
             {
                 result = firstInput * secondInput;
+                display.Text = result.ToString();
             }
             else if (function == '/')
             {
-                result = firstInput / secondInput;
+                if (secondInput == '0')
+                {
+                    display.Text = "Error";
+                }
+                else
+                {
+                    result = firstInput / secondInput;
+                    display.Text = result.ToString();
+                }
             }
-
-            display.Text = Convert.ToString(result);
         }
 
         private void clearButton_Click(object sender, EventArgs e)
