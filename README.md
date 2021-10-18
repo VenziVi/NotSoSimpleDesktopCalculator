@@ -1,2 +1,2 @@
-# NotSimpleDesktopCalculator
+# NotSoSimpleDesktopCalculator
 Desktop Calculator App
