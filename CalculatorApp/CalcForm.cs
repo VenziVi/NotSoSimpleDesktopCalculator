@@ -12,17 +12,11 @@ namespace CalculatorApp
 {
     public partial class CalcForm : Form
     {
-        //string inputData = string.Empty;
-        //string firstNumber = string.Empty;
-        //string secondNumber = string.Empty;
-        //char function;
-        //double result = 0.0;
-        //int inputCounter = 0;
-
-        string fullNumber = string.Empty;
         string tempNumber = string.Empty;
         string dataFunction = string.Empty;
         string lastSymbol = string.Empty;
+        string result = string.Empty;
+        int resutlCounter = 0;
 
         public CalcForm()
         {
@@ -31,234 +25,142 @@ namespace CalculatorApp
 
         private void oneButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-
-            if (lastSymbol == "." || lastSymbol == "d")
-            {
-                tempNumber += "1";
-            }
-            else
-            {
-                tempNumber += " 1";
-            }
-            functionDisplay.Text += tempNumber;
-            lastSymbol = "d";
-
+            InsertNumber("1");
         }
 
         private void twoButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-            if (lastSymbol == "." || lastSymbol == "d")
-            {
-                tempNumber += "2";
-            }
-            else
-            {
-                tempNumber += " 2";
-            }
-            functionDisplay.Text += tempNumber;
-            lastSymbol = "d";
+            InsertNumber("2");
         }
 
         private void threeButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-            if (lastSymbol == "." || lastSymbol == "d")
-            {
-                tempNumber += "3";
-            }
-            else
-            {
-                tempNumber += " 3";
-            }
-            functionDisplay.Text += tempNumber;
-            lastSymbol = "d";
+            InsertNumber("3");
         }
 
         private void fourButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-            if (lastSymbol == "." || lastSymbol == "d")
-            {
-                tempNumber += "4";
-            }
-            else
-            {
-                tempNumber += " 4";
-            }
-            functionDisplay.Text += tempNumber;
-            lastSymbol = "d";
+            InsertNumber("4");
         }
 
         private void fiveButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-            if (lastSymbol == "." || lastSymbol == "d")
-            {
-                tempNumber += "5";
-            }
-            else
-            {
-                tempNumber += " 5";
-            }
-            functionDisplay.Text += tempNumber;
-            lastSymbol = "d";
+            InsertNumber("5");
         }
 
         private void sixButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-            if (lastSymbol == "." || lastSymbol == "d")
-            {
-                tempNumber += "6";
-            }
-            else
-            {
-                tempNumber += " 6";
-            }
-            functionDisplay.Text += tempNumber;
-            lastSymbol = "d";
+            InsertNumber("6");
         }
 
         private void sevenButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-            if (lastSymbol == "." || lastSymbol == "d")
-            {
-                tempNumber += "7";
-            }
-            else
-            {
-                tempNumber += " 7";
-            }
-            functionDisplay.Text += tempNumber;
-            lastSymbol = "d";
+            InsertNumber("7");
         }
 
         private void eigftButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-            if (lastSymbol == "." || lastSymbol == "d")
-            {
-                tempNumber += "8";
-            }
-            else
-            {
-                tempNumber += " 8";
-            }
-            functionDisplay.Text += tempNumber;
-            lastSymbol = "d";
+            InsertNumber("8");
         }
 
         private void nineButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-            if (lastSymbol == "." || lastSymbol == "d")
-            {
-                tempNumber += "9";
-            }
-            else
-            {
-                tempNumber += " 9";
-            }
-            functionDisplay.Text += tempNumber;
-            lastSymbol = "d";
+            InsertNumber("9");
         }
 
         private void zeroButton_Click(object sender, EventArgs e)
         {
+            InsertNumber("0");
+        }
+
+        private void InsertNumber(string number)
+        {
             functionDisplay.Text = string.Empty;
+            display.Text = string.Empty;
+
+            if (lastSymbol == "=")
+            {
+                dataFunction = string.Empty;
+                tempNumber = string.Empty;
+            }
+
+            if (lastSymbol == "s" || lastSymbol == "(" || lastSymbol == ")")
+            {
+                tempNumber = string.Empty;
+            }
+
             if (lastSymbol == "." || lastSymbol == "d")
             {
-                tempNumber += "0";
+                dataFunction += number;
+                tempNumber += number;
             }
             else
             {
-                tempNumber += " 0";
+                dataFunction += " " + number;
+                tempNumber += number;
             }
-            functionDisplay.Text += tempNumber;
+            functionDisplay.Text += dataFunction;
+            display.Text = tempNumber;
             lastSymbol = "d";
         }
 
         private void decimalButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-
-            if (lastSymbol != "." && lastSymbol != "s")
-            {
-                tempNumber += ".";
-                functionDisplay.Text += tempNumber;
-                lastSymbol = ".";
-            }
-            else
-            {
-                functionDisplay.Text = tempNumber;
-            }
-            
+            InsertFunction(".");
         }
 
         private void devisionButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-
-            if (lastSymbol  != "." && lastSymbol != "s")
-            {
-                tempNumber += " /";
-                functionDisplay.Text += tempNumber;
-                lastSymbol = "s";
-            }
-            else
-            {
-                functionDisplay.Text = tempNumber;
-            }
+            InsertFunction("/");
         }
 
         private void multiplyButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-
-            if (lastSymbol != "." && lastSymbol != "s")
-            {
-                tempNumber += " *";
-                functionDisplay.Text += tempNumber;
-                lastSymbol = "s";
-            }
-            else
-            {
-                functionDisplay.Text = tempNumber;
-            }
+            InsertFunction("*");
         }
 
         private void minusButton_Click(object sender, EventArgs e)
         {
-            functionDisplay.Text = string.Empty;
-
-            if (lastSymbol != "." && lastSymbol != "s")
-            {
-                tempNumber += " -";
-                functionDisplay.Text += tempNumber;
-                lastSymbol = "s";
-            }
-            else
-            {
-                functionDisplay.Text = tempNumber;
-            }
+            InsertFunction("-");
         }
 
         private void plusButton_Click(object sender, EventArgs e)
         {
+            InsertFunction("+");
+        }
+
+        private void InsertFunction(string functionSign)
+        {
+            if (resutlCounter % 2 != 0 && lastSymbol != "d")
+            {
+                dataFunction = result;
+                functionDisplay.Text = result;
+                resutlCounter++;
+            }
+
             functionDisplay.Text = string.Empty;
 
             if (lastSymbol != "." && lastSymbol != "s")
             {
-                tempNumber += " +";
-                functionDisplay.Text += tempNumber;
-                lastSymbol = "s";
+                if (functionSign == ".")
+                {
+                    dataFunction += ".";
+                    tempNumber += ".";
+                    functionDisplay.Text += dataFunction;
+                    lastSymbol = ".";
+                    display.Text += tempNumber;
+                }
+                else
+                {
+                    dataFunction += " " + functionSign;
+                    functionDisplay.Text += dataFunction;
+                    lastSymbol = "s";
+                }
             }
             else
             {
-                functionDisplay.Text = tempNumber;
+                functionDisplay.Text = dataFunction;
+                display.Text += dataFunction;
             }
         }
 
@@ -268,12 +170,12 @@ namespace CalculatorApp
 
             if (lastSymbol == "(")
             {
-                functionDisplay.Text = tempNumber;
+                functionDisplay.Text = dataFunction;
             }
             else
             {
-                tempNumber += " (";
-                functionDisplay.Text += tempNumber;
+                dataFunction += " (";
+                functionDisplay.Text += dataFunction;
                 lastSymbol = "(";
             }
         }
@@ -284,7 +186,7 @@ namespace CalculatorApp
 
             if (lastSymbol == ")" || lastSymbol == "s")
             {
-                functionDisplay.Text = tempNumber;
+                functionDisplay.Text = dataFunction;
             }
             else if (lastSymbol == string.Empty)
             {
@@ -292,15 +194,14 @@ namespace CalculatorApp
             }
             else if (lastSymbol == "d")
             {
-                tempNumber += " )";
-                functionDisplay.Text += tempNumber;
+                dataFunction += " )";
+                functionDisplay.Text += dataFunction;
                 lastSymbol = ")";
             }
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            fullNumber = string.Empty;
             tempNumber = string.Empty;
             dataFunction = string.Empty;
             display.Text = " 0";
@@ -311,9 +212,11 @@ namespace CalculatorApp
         {
 
             string dataInput = functionDisplay.Text.TrimStart();
-            string result = CalculateResult(dataInput);
+            result = CalculateResult(dataInput);
 
             display.Text = result;
+            resutlCounter++;
+            lastSymbol = "=";
         }
 
         private string CalculateResult(string dataInput)
@@ -366,12 +269,9 @@ namespace CalculatorApp
                 output += operatorStack.Pop() + " ";
             }
 
-            Console.WriteLine(output);
-
             string[] RPNExpression = output.Split(' ', (char)StringSplitOptions.RemoveEmptyEntries)
                 .Reverse().ToArray();
             Stack<string> stack = new Stack<string>(RPNExpression);
-
 
             while (stack.Count > 2)
             {
