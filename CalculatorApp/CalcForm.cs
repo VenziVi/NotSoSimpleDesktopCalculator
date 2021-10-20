@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace CalculatorApp
@@ -136,15 +134,27 @@ namespace CalculatorApp
 
             functionDisplay.Text = string.Empty;
 
-            if (lastSymbol != "." && lastSymbol != "s")
+            if (lastSymbol != "." && lastSymbol != "s" && 
+                lastSymbol != "(" && lastSymbol != string.Empty)
             {
                 if (functionSign == ".")
                 {
-                    dataFunction += ".";
-                    tempNumber += ".";
-                    functionDisplay.Text += dataFunction;
-                    lastSymbol = ".";
-                    display.Text = tempNumber;
+                    if (dataFunction == string.Empty)
+                    {
+                        dataFunction += "0.";
+                        tempNumber += "0.";
+                        functionDisplay.Text += dataFunction;
+                        lastSymbol = ".";
+                        display.Text = tempNumber;
+                    }
+                    else
+                    {
+                        dataFunction += ".";
+                        tempNumber += ".";
+                        functionDisplay.Text += dataFunction;
+                        lastSymbol = ".";
+                        display.Text = tempNumber;
+                    }
                 }
                 else
                 {
@@ -189,7 +199,9 @@ namespace CalculatorApp
             {
                 functionDisplay.Text = "";
             }
-            else if (lastSymbol == "d" || (lastSymbol == ")" && braceletCount > 0))
+            else if (lastSymbol == "d" ||
+                (lastSymbol == "(" && braceletCount > 0) ||
+                (lastSymbol == ")" && braceletCount > 0))
             {
                 dataFunction += " )";
                 functionDisplay.Text += dataFunction;

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CalculatorApp
 {
@@ -58,8 +56,11 @@ namespace CalculatorApp
                 output += operatorStack.Pop() + " ";
             }
 
-            string[] RPNExpression = output.Split(' ', (char)StringSplitOptions.RemoveEmptyEntries)
-                .Reverse().ToArray();
+            string[] RPNExpression = output
+                .Split(' ', (char)StringSplitOptions.RemoveEmptyEntries)
+                .Reverse()
+                .ToArray();
+
             Stack<string> stack = new Stack<string>(RPNExpression);
 
             while (stack.Count > 2)
