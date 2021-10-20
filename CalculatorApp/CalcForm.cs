@@ -214,7 +214,7 @@ namespace CalculatorApp
             if (braceletCount == 0)
             {
                 string dataInput = functionDisplay.Text.TrimStart();
-                result = CalculatorEngin.CalculateResult(dataInput);
+                result = CalculatorEngine.CalculateResult(dataInput);
 
                 display.Text = result;
                 resutlCounter++;

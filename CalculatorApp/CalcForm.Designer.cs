@@ -54,7 +54,7 @@ namespace CalculatorApp
             // 
             // oneButton
             // 
-            this.oneButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.oneButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.oneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.oneButton.Location = new System.Drawing.Point(10, 343);
             this.oneButton.Margin = new System.Windows.Forms.Padding(2);
@@ -67,7 +67,7 @@ namespace CalculatorApp
             // 
             // eigftButton
             // 
-            this.eigftButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.eigftButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.eigftButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.eigftButton.Location = new System.Drawing.Point(75, 203);
             this.eigftButton.Margin = new System.Windows.Forms.Padding(2);
@@ -80,7 +80,7 @@ namespace CalculatorApp
             // 
             // sevenButton
             // 
-            this.sevenButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.sevenButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.sevenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sevenButton.Location = new System.Drawing.Point(10, 203);
             this.sevenButton.Margin = new System.Windows.Forms.Padding(2);
@@ -93,7 +93,7 @@ namespace CalculatorApp
             // 
             // zeroButton
             // 
-            this.zeroButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.zeroButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.zeroButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.zeroButton.Location = new System.Drawing.Point(75, 413);
             this.zeroButton.Margin = new System.Windows.Forms.Padding(2);
@@ -106,6 +106,7 @@ namespace CalculatorApp
             // 
             // clearButton
             // 
+            this.clearButton.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clearButton.Location = new System.Drawing.Point(10, 413);
             this.clearButton.Margin = new System.Windows.Forms.Padding(2);
@@ -113,12 +114,12 @@ namespace CalculatorApp
             this.clearButton.Size = new System.Drawing.Size(60, 65);
             this.clearButton.TabIndex = 4;
             this.clearButton.Text = "C";
-            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.UseVisualStyleBackColor = false;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // fiveButton
             // 
-            this.fiveButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.fiveButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.fiveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fiveButton.Location = new System.Drawing.Point(75, 273);
             this.fiveButton.Margin = new System.Windows.Forms.Padding(2);
@@ -131,7 +132,7 @@ namespace CalculatorApp
             // 
             // fourButton
             // 
-            this.fourButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.fourButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.fourButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fourButton.Location = new System.Drawing.Point(10, 273);
             this.fourButton.Margin = new System.Windows.Forms.Padding(2);
@@ -157,7 +158,7 @@ namespace CalculatorApp
             // 
             // twoButton
             // 
-            this.twoButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.twoButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.twoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.twoButton.Location = new System.Drawing.Point(75, 343);
             this.twoButton.Margin = new System.Windows.Forms.Padding(2);
@@ -170,6 +171,7 @@ namespace CalculatorApp
             // 
             // equalButton
             // 
+            this.equalButton.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.equalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.equalButton.Location = new System.Drawing.Point(204, 343);
             this.equalButton.Margin = new System.Windows.Forms.Padding(2);
@@ -177,12 +179,12 @@ namespace CalculatorApp
             this.equalButton.Size = new System.Drawing.Size(60, 135);
             this.equalButton.TabIndex = 9;
             this.equalButton.Text = "=";
-            this.equalButton.UseVisualStyleBackColor = true;
+            this.equalButton.UseVisualStyleBackColor = false;
             this.equalButton.Click += new System.EventHandler(this.equalButton_Click);
             // 
             // sixButton
             // 
-            this.sixButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.sixButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.sixButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sixButton.Location = new System.Drawing.Point(140, 273);
             this.sixButton.Margin = new System.Windows.Forms.Padding(2);
@@ -195,7 +197,7 @@ namespace CalculatorApp
             // 
             // nineButton
             // 
-            this.nineButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.nineButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.nineButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nineButton.Location = new System.Drawing.Point(140, 203);
             this.nineButton.Margin = new System.Windows.Forms.Padding(2);
@@ -208,7 +210,7 @@ namespace CalculatorApp
             // 
             // threeButton
             // 
-            this.threeButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.threeButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.threeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.threeButton.Location = new System.Drawing.Point(140, 343);
             this.threeButton.Margin = new System.Windows.Forms.Padding(2);
@@ -221,6 +223,7 @@ namespace CalculatorApp
             // 
             // minusButton
             // 
+            this.minusButton.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.minusButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.minusButton.Location = new System.Drawing.Point(204, 203);
             this.minusButton.Margin = new System.Windows.Forms.Padding(2);
@@ -228,11 +231,12 @@ namespace CalculatorApp
             this.minusButton.Size = new System.Drawing.Size(60, 65);
             this.minusButton.TabIndex = 14;
             this.minusButton.Text = "-";
-            this.minusButton.UseVisualStyleBackColor = true;
+            this.minusButton.UseVisualStyleBackColor = false;
             this.minusButton.Click += new System.EventHandler(this.minusButton_Click);
             // 
             // plusButton
             // 
+            this.plusButton.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.plusButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.plusButton.Location = new System.Drawing.Point(204, 273);
             this.plusButton.Margin = new System.Windows.Forms.Padding(2);
@@ -240,11 +244,12 @@ namespace CalculatorApp
             this.plusButton.Size = new System.Drawing.Size(60, 65);
             this.plusButton.TabIndex = 15;
             this.plusButton.Text = "+";
-            this.plusButton.UseVisualStyleBackColor = true;
+            this.plusButton.UseVisualStyleBackColor = false;
             this.plusButton.Click += new System.EventHandler(this.plusButton_Click);
             // 
             // leftBracket
             // 
+            this.leftBracket.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.leftBracket.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.leftBracket.Location = new System.Drawing.Point(10, 133);
             this.leftBracket.Margin = new System.Windows.Forms.Padding(2);
@@ -252,11 +257,12 @@ namespace CalculatorApp
             this.leftBracket.Size = new System.Drawing.Size(60, 65);
             this.leftBracket.TabIndex = 16;
             this.leftBracket.Text = "(";
-            this.leftBracket.UseVisualStyleBackColor = true;
+            this.leftBracket.UseVisualStyleBackColor = false;
             this.leftBracket.Click += new System.EventHandler(this.leftBracket_Click);
             // 
             // rightBracket
             // 
+            this.rightBracket.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.rightBracket.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rightBracket.Location = new System.Drawing.Point(75, 133);
             this.rightBracket.Margin = new System.Windows.Forms.Padding(2);
@@ -264,11 +270,12 @@ namespace CalculatorApp
             this.rightBracket.Size = new System.Drawing.Size(60, 65);
             this.rightBracket.TabIndex = 17;
             this.rightBracket.Text = ")";
-            this.rightBracket.UseVisualStyleBackColor = true;
+            this.rightBracket.UseVisualStyleBackColor = false;
             this.rightBracket.Click += new System.EventHandler(this.rightBracket_Click);
             // 
             // devisionButton
             // 
+            this.devisionButton.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.devisionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.devisionButton.Location = new System.Drawing.Point(140, 133);
             this.devisionButton.Margin = new System.Windows.Forms.Padding(2);
@@ -276,11 +283,12 @@ namespace CalculatorApp
             this.devisionButton.Size = new System.Drawing.Size(60, 65);
             this.devisionButton.TabIndex = 18;
             this.devisionButton.Text = "/";
-            this.devisionButton.UseVisualStyleBackColor = true;
+            this.devisionButton.UseVisualStyleBackColor = false;
             this.devisionButton.Click += new System.EventHandler(this.devisionButton_Click);
             // 
             // multiplyButton
             // 
+            this.multiplyButton.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.multiplyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.multiplyButton.Location = new System.Drawing.Point(204, 133);
             this.multiplyButton.Margin = new System.Windows.Forms.Padding(2);
@@ -288,11 +296,12 @@ namespace CalculatorApp
             this.multiplyButton.Size = new System.Drawing.Size(60, 65);
             this.multiplyButton.TabIndex = 19;
             this.multiplyButton.Text = "x";
-            this.multiplyButton.UseVisualStyleBackColor = true;
+            this.multiplyButton.UseVisualStyleBackColor = false;
             this.multiplyButton.Click += new System.EventHandler(this.multiplyButton_Click);
             // 
             // decimalButton
             // 
+            this.decimalButton.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.decimalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.decimalButton.Location = new System.Drawing.Point(140, 413);
             this.decimalButton.Margin = new System.Windows.Forms.Padding(2);
@@ -300,7 +309,7 @@ namespace CalculatorApp
             this.decimalButton.Size = new System.Drawing.Size(60, 65);
             this.decimalButton.TabIndex = 20;
             this.decimalButton.Text = ".";
-            this.decimalButton.UseVisualStyleBackColor = true;
+            this.decimalButton.UseVisualStyleBackColor = false;
             this.decimalButton.Click += new System.EventHandler(this.decimalButton_Click);
             // 
             // functionDisplay
@@ -319,7 +328,7 @@ namespace CalculatorApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 489);
+            this.ClientSize = new System.Drawing.Size(275, 488);
             this.Controls.Add(this.functionDisplay);
             this.Controls.Add(this.decimalButton);
             this.Controls.Add(this.multiplyButton);
