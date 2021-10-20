@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CalculatorApp
@@ -17,6 +12,7 @@ namespace CalculatorApp
         string lastSymbol = string.Empty;
         string result = string.Empty;
         int resutlCounter = 0;
+        int braceletCount = 0;
 
         public CalcForm()
         {
@@ -116,7 +112,7 @@ namespace CalculatorApp
 
         private void multiplyButton_Click(object sender, EventArgs e)
         {
-            InsertFunction("*");
+            InsertFunction("x");
         }
 
         private void minusButton_Click(object sender, EventArgs e)
@@ -148,7 +144,7 @@ namespace CalculatorApp
                     tempNumber += ".";
                     functionDisplay.Text += dataFunction;
                     lastSymbol = ".";
-                    display.Text += tempNumber;
+                    display.Text = tempNumber;
                 }
                 else
                 {
@@ -168,7 +164,7 @@ namespace CalculatorApp
         {
             functionDisplay.Text = string.Empty;
 
-            if (lastSymbol == "(")
+            if (lastSymbol == "d")
             {
                 functionDisplay.Text = dataFunction;
             }
@@ -177,6 +173,7 @@ namespace CalculatorApp
                 dataFunction += " (";
                 functionDisplay.Text += dataFunction;
                 lastSymbol = "(";
+                braceletCount++;
             }
         }
 
@@ -184,19 +181,20 @@ namespace CalculatorApp
         {
             functionDisplay.Text = string.Empty;
 
-            if (lastSymbol == ")" || lastSymbol == "s")
+            if (braceletCount == 0 || lastSymbol == "s")
             {
                 functionDisplay.Text = dataFunction;
             }
             else if (lastSymbol == string.Empty)
             {
-                functionDisplay.Text = "0";
+                functionDisplay.Text = "";
             }
-            else if (lastSymbol == "d")
+            else if (lastSymbol == "d" || (lastSymbol == ")" && braceletCount > 0))
             {
                 dataFunction += " )";
                 functionDisplay.Text += dataFunction;
                 lastSymbol = ")";
+                braceletCount--;
             }
         }
 
@@ -206,155 +204,22 @@ namespace CalculatorApp
             dataFunction = string.Empty;
             display.Text = " 0";
             functionDisplay.Text = string.Empty;
+            braceletCount = 0;
+            resutlCounter = 0;
         }
 
         private void equalButton_Click(object sender, EventArgs e)
         {
 
-            string dataInput = functionDisplay.Text.TrimStart();
-            result = CalculateResult(dataInput);
-
-            display.Text = result;
-            resutlCounter++;
-            lastSymbol = "=";
-        }
-
-        private string CalculateResult(string dataInput)
-        {
-            string[] expression = dataInput.Split(' ');
-
-            Stack<string> operatorStack = new Stack<string>();
-            string output = string.Empty;
-
-            for (int i = 0; i < expression.Length; i++)
+            if (braceletCount == 0)
             {
-                if (IsOperator(expression[i]))
-                {
-                    if (operatorStack.Count > 0)
-                    {
-                        var oldElementArity = OperationPrecedence
-                            (operatorStack.Peek());
-                        var elementArity = OperationPrecedence
-                            (expression[i]);
+                string dataInput = functionDisplay.Text.TrimStart();
+                result = CalculatorEngin.CalculateResult(dataInput);
 
-                        if (oldElementArity >= elementArity)
-                        {
-                            output += operatorStack.Pop() + " ";
-                        }
-                    }
-                    operatorStack.Push(expression[i]);
-
-                }
-                else if (expression[i] == "(")
-                {
-                    operatorStack.Push(expression[i]);
-                }
-                else if (expression[i] == ")")
-                {
-                    while (operatorStack.Peek() != "(")
-                    {
-                        output += operatorStack.Pop() + " ";
-                    }
-
-                    operatorStack.Pop();
-                }
-                else
-                {
-                    output += expression[i] + " ";
-                }
+                display.Text = result;
+                resutlCounter++;
+                lastSymbol = "=";
             }
-
-            while (operatorStack.Count > 0)
-            {
-                output += operatorStack.Pop() + " ";
-            }
-
-            string[] RPNExpression = output.Split(' ', (char)StringSplitOptions.RemoveEmptyEntries)
-                .Reverse().ToArray();
-            Stack<string> stack = new Stack<string>(RPNExpression);
-
-            while (stack.Count > 2)
-            {
-                List<string> elements = new List<string>();
-                var currentElement = stack.Pop();
-                while (!IsOperator(currentElement))
-                {
-                    elements.Add(currentElement);
-                    currentElement = stack.Pop();
-                }
-
-                double firstNum = double.Parse(elements[elements.Count - 2]);
-                double secondNum = double.Parse(elements[elements.Count - 1]);
-
-                double result = PerformOperation(currentElement, firstNum, secondNum);
-
-                stack.Push(result.ToString());
-
-                for (int i = elements.Count - 3; i >= 0; i--)
-                {
-                    stack.Push(elements[i]);
-                }
-            }
-
-            return stack.Peek();
-        }
-
-        private static double PerformOperation(string currentElement, double firstNum, double secondNum)
-        {
-            switch (currentElement)
-            {
-                case "+":
-                    return firstNum + secondNum;
-                case "-":
-                    return firstNum - secondNum;
-                case "/":
-                    return firstNum / secondNum;
-                case "*":
-                    return firstNum * secondNum;
-                default:
-                    break;
-            }
-
-            throw new NotImplementedException();
-        }
-
-        static int OperationPrecedence(string input)
-        {
-            switch (input)
-            {
-                case "+":
-                    return 2;
-                case "-":
-                    return 2;
-                case "/":
-                    return 3;
-                case "*":
-                    return 3;
-                case "(":
-                    return 1;
-                default:
-                    break;
-            }
-            throw new ArgumentException();
-        }
-
-
-        static bool IsOperator(string input)
-        {
-            switch (input)
-            {
-                case "+":
-                    return true;
-                case "-":
-                    return true;
-                case "/":
-                    return true;
-                case "*":
-                    return true;
-                default:
-                    break;
-            }
-            return false;
         }
     }
 }
