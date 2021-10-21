@@ -48,13 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalaculationEngine\CalculateResult.cs" />
+    <Compile Include="CalaculationEngine\CalculationParenthesesAlgorithm.cs" />
+    <Compile Include="CalaculationEngine\OperationsOrder.cs" />
+    <Compile Include="CalaculationEngine\OperatorCheck.cs" />
+    <Compile Include="CalaculationEngine\PartialCalculation.cs" />
     <Compile Include="CalcForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CalcForm.Designer.cs">
       <DependentUpon>CalcForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CalculatorEngine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CalcForm.resx">

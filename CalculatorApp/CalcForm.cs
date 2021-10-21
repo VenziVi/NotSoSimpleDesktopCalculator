@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalculatorApp.CalaculatorEngine;
+using System;
 using System.Windows.Forms;
 
 namespace CalculatorApp
@@ -226,7 +227,8 @@ namespace CalculatorApp
             if (braceletCount == 0)
             {
                 string dataInput = functionDisplay.Text.TrimStart();
-                result = CalculatorEngine.CalculateResult(dataInput);
+                string resultWithoutParentheses = CalculatorParenthesesAlgorithm.CalculateResult(dataInput);
+                result = CalculateResult.GetTotalResult(resultWithoutParentheses);
 
                 display.Text = result;
                 resutlCounter++;
